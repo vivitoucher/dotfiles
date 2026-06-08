@@ -1,0 +1,46 @@
+{
+    // 🌸 PROJECT "HER" - WAYBAR MASTER BLUEPRINT CONFIG
+    "layer": "top",
+    "position": "top",
+    "mod": "dock",
+    "exclusive": true,
+    "passthrough": false,
+    "gtk-layer-shell": true,
+    "height": 38,
+    
+    // Layout alignment modules
+    "modules-left": ["hyprland/workspaces", "custom/music"],
+    "modules-center": ["clock"],
+    "modules-right": ["cpu", "memory", "pulseaudio", "tray"],
+
+    // Left Section Modules
+    "hyprland/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": true,
+        "on-click": "activate"
+    },
+
+    // Center Section Modules (The Aesthetic Time Display)
+    "clock": {
+        "format": "🌸 {:%I:%M %p  •  %A, %b %d}",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+    },
+
+    // Right Section Modules (Hardware Stats)
+    "cpu": {
+        "interval": 10,
+        "format": "💻 CPU: {usage}%",
+        "max-length": 10
+    },
+    "memory": {
+        "interval": 10,
+        "format": "🧠 RAM: {used:0.1f}GB",
+        "max-length": 10
+    },
+    "pulseaudio": {
+        "format": "🎵 {volume}%",
+        "format-muted": "🔇 Muted",
+        "on-click": "pavucontrol"
+    }
+}
+

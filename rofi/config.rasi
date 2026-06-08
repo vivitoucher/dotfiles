@@ -1,0 +1,140 @@
+/* 🌸 PROJECT "HER" - ROFI APP LAUNCHER MASTER CONFIG */
+
+configuration {
+    modi:                       "drun,run";
+    show-icons:                 true;
+    display-drun:               "🌸 Apps";
+    display-run:                "💻 Run";
+    drun-display-format:        "{name}";
+    font:                       "JetBrains Mono Bold 11";
+}
+
+/* Global Color & Matrix Variable Definition */
+* {
+    bg-color:                   #101419ebd; /* 85% translucent midnight violet black */
+    bg-selected:                #ff79c6ff;  /* Solid glowing e-girl pink */
+    fg-color:                   #e1e8f5ff;  /* Frosted white text */
+    fg-selected:                #101419ff;  /* Dark text when hovering over pink */
+    accent-color:               #00f5d4ff;  /* Neon cyan for accents */
+    border-color:               #ff79c6ff;  /* Pink border */
+}
+
+/* Main Window Configuration */
+window {
+    transparency:                "real";
+    location:                    center;
+    anchor:                      center;
+    fullscreen:                  false;
+    width:                       500px;
+    x-offset:                    0px;
+    y-offset:                    0px;
+
+    enabled:                     true;
+    margin:                      0px;
+    padding:                     0px;
+    border:                      2px solid;
+    border-radius:               12px;
+    border-color:                @border-color;
+    background-color:            @bg-color;
+    cursor:                      "default";
+}
+
+/* Main Layout Container */
+mainbox {
+    enabled:                     true;
+    spacing:                     10px;
+    margin:                      0px;
+    padding:                     20px;
+    border:                      0px solid;
+    background-color:            transparent;
+    children:                    [ "inputbar", "listview" ];
+}
+
+/* Search Bar Container */
+inputbar {
+    enabled:                     true;
+    spacing:                     10px;
+    margin:                      0px;
+    padding:                     8px 12px;
+    border:                      1px solid;
+    border-radius:               8px;
+    border-color:                rgba(189, 147, 249, 0.4); /* Subtly glowing lavender border */
+    background-color:            rgba(16, 20, 25, 0.5);
+    text-color:                  @fg-color;
+    children:                    [ "prompt", "entry" ];
+}
+
+prompt {
+    enabled:                     true;
+    background-color:            transparent;
+    text-color:                  @accent-color; /* Neon cyan for prompt tag */
+}
+
+entry {
+    enabled:                     true;
+    background-color:            transparent;
+    text-color:                  @fg-color;
+    cursor:                      "text";
+    placeholder:                 "Search for apps...";
+    placeholder-color:           rgba(225, 232, 245, 0.4);
+}
+
+/* Application List View */
+listview {
+    enabled:                     true;
+    columns:                     1;
+    lines:                       6;
+    cycle:                       true;
+    dynamic:                     true;
+    scrollbar:                   false;
+    layout:                      vertical;
+    reverse:                     false;
+    fixed-height:                true;
+    fixed-columns:               true;
+    
+    spacing:                     5px;
+    margin:                      0px;
+    padding:                     0px;
+    background-color:            transparent;
+    text-color:                  @fg-color;
+    cursor:                      "default";
+}
+
+/* Individual Application Row Style */
+element {
+    enabled:                     true;
+    spacing:                     10px;
+    margin:                      0px;
+    padding:                     6px;
+    border-radius:               6px;
+    background-color:            transparent;
+    text-color:                  @fg-color;
+    cursor:                      "pointer";
+}
+
+element normal.normal {
+    background-color:            transparent;
+    text-color:                  @fg-color;
+}
+
+/* When Hovering or Selected by Keyboard Layout */
+element selected.normal {
+    background-color:            @bg-selected; /* Glowing pink selection capsule */
+    text-color:                  @fg-selected; /* Snappy black text */
+}
+
+element-icon {
+    background-color:            transparent;
+    text-color:                  inherit;
+    size:                        24px;
+    cursor:                      inherit;
+}
+
+element-text {
+    background-color:            transparent;
+    text-color:                  inherit;
+    highlight:                   inherit;
+    cursor:                      inherit;
+    vertical-align:              0.5;
+    horizontal-align:            0.0;
+}
