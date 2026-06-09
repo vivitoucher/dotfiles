@@ -9,6 +9,6 @@ PanelWindow {
     
     Text {
         anchors.centerIn: parent
-        text: "0% Rice - Baseline Pipeline Operational"
+        text: "0% rice - baseline pipeline operational"
     }
 }
