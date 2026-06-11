@@ -1,1 +1,1 @@
-# vivi's future nixos baseline (0% rice)
+# vivis future nixos baseline (0% rice)
