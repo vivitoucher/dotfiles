@@ -1,0 +1,9 @@
+{"timestamp":7577346,"category":"bounce.tracking.protection","name":"purge_action","extra":{"site_host":"google.co.in","glean_timestamp":"1780926238604","is_dry_run":"true","bounce_time":"1780919098","success":"true"}}
+{"timestamp":8724358,"category":"glean","name":"restarted","extra":{"glean.startup.date":"2026-06-08T14:03+00:00","glean_timestamp":"1780927385616"},"execution_counter":1}
+{"timestamp":49442,"category":"glean","name":"restarted","extra":{"glean.startup.date":"2026-06-08T14:08+00:00","glean_timestamp":"1780927693284"},"execution_counter":2}
+{"timestamp":1247172,"category":"glean","name":"restarted","extra":{"glean_timestamp":"1780928891013","glean.startup.date":"2026-06-08T14:28+00:00"},"execution_counter":3}
+{"timestamp":43150,"category":"glean","name":"restarted","extra":{"glean.startup.date":"2026-06-08T14:44+00:00","glean_timestamp":"1780929875925"},"execution_counter":4}
+{"timestamp":370065,"category":"glean","name":"restarted","extra":{"glean.startup.date":"2026-06-08T14:50+00:00","glean_timestamp":"1780930202840"},"execution_counter":5}
+{"timestamp":3351450,"category":"glean","name":"restarted","extra":{"glean_timestamp":"1780933769720","glean.startup.date":"2026-06-08T15:49+00:00"},"execution_counter":6}
+{"timestamp":40745,"category":"glean","name":"restarted","extra":{"glean.startup.date":"2026-06-09T03:41+00:00","glean_timestamp":"1780976515452"},"execution_counter":7}
+{"timestamp":38303,"category":"glean","name":"restarted","extra":{"glean.startup.date":"2026-06-11T12:43+00:00","glean_timestamp":"1781181793089"},"execution_counter":8}

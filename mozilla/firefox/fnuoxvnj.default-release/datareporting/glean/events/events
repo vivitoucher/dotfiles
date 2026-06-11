@@ -1,0 +1,4 @@
+{"timestamp":408276,"category":"normandy","name":"expose_nimbus_experiment","extra":{"value":"pin-frequently-used-websites-promo-rollout-day-3-users-all-locales","featureId":"fxms-message-11","glean_timestamp":"1781182163062","branchSlug":"rollout-branch"}}
+{"timestamp":408276,"category":"nimbus_events","name":"exposure","extra":{"experiment":"pin-frequently-used-websites-promo-rollout-day-3-users-all-locales","branch":"rollout-branch","feature_id":"fxms-message-11","glean_timestamp":"1781182163062"}}
+{"timestamp":411562,"category":"genai.chatbot","name":"shortcuts_displayed","extra":{"glean_timestamp":"1781182166348","inputType":"","selection":"4","delay":"105"}}
+{"timestamp":412850,"category":"genai.chatbot","name":"shortcuts_displayed","extra":{"glean_timestamp":"1781182167636","selection":"4","inputType":"","delay":"112"}}
