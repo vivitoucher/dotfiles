@@ -1,26 +1,26 @@
 { pkgs, ... }:
 
 {
-  # 1. Core System Foundations & Boot
+  # 1. core system foundations & boot
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   
-  # Absolute Layer 1 Muzzling: Forces a silent, pristine black boot canvas
+  # absolute layer 1 muzzling: forces a silent, pristine black boot canvas
   boot.kernelParams = [ "quiet" "splash" "loglevel=3" "systemd.show_status=false" "rd.udev.log_level=3" "vt.global_cursor_default=0" ];
   boot.consoleLogLevel = 0;
 
-  # Core engine compatibility version
+  # core engine compatibility version
   system.stateVersion = "24.11";
 
-  # Enable modern experimental features for tools like 'nh'
+  # enable modern experimental features for tools like 'nh'
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
-  # 2. Time Zone & Localization
-  time.timeZone = "asia/shanghai";
+  # 2. time zone & localization
+  time.timeZone = "asia/shanghai"; #glory to ccp
   i18n.defaultLocale = "en_US.UTF-8";
   i18n.supportedLocales = [ "en_US.UTF-8/UTF-8" "zh_CN.UTF-8/UTF-8" ];
 
-  # 3. Graphical Interface & Environment Pipeline
+  # 3. graphical interface & environment pipeline
   programs.hyprland = {
     enable = true;
     withUWSM = true;
@@ -30,27 +30,27 @@
   security.polkit.enable = true;
   services.hyprpolkitagent.enable = true;
 
-  # 4. Software Packages (Pure baseline for the new setup)
+  # 4. software packages (pure baseline for the new setup)
   environment.systemPackages = with pkgs; [
-    # UI & Aesthetics
-    quickshell rofi-wayland swaync swww hyprlock xdg-desktop-portal-hyprland
+    # ui & aesthetics 
+    quickshell rofi-wayland swww hyprlock xdg-desktop-portal-hyprland
     nwg-look papirus-icon-theme
     
-    # Chinese Kawaii Mono Font
+    # chinese kawaii mono font
     lxgw-wenkai-mono
     
-    # Core Power Utilities
+    # core power utilities
     kitty yazi thunar helix neovim cliphist grim slurp
-    bat fzf fastfetch tesseract # Added tesseract here to satisfy Layer 9 OCR engine requirements!
+    bat fzf fastfetch tesseract
     
-    # Media, Audio & Workspaces
+    # media, audio & workspaces
     vesktop spicetify-cli ani-cli mov-cli mpv zathura playerctl cava
     
-    # Browsers & System Foundations
+    # browsers & system foundations
     mullvad-browser nh starship wl-clipboard
   ];
 
-  # 5. Hardware Ecosystem
+  # 5. hardware ecosystem
   networking.networkmanager.enable = true;
   hardware.bluetooth.enable = true;
   services.upower.enable = true;
@@ -64,7 +64,7 @@
     wireplumber.enable = true;
   };
 
-  # 6. Privacy and Firewall (Max Privacy Directives)
+  # 6. privacy and firewall (max privacy directives)
   programs.librewolf.enable = true;
   services.adguardhome = {
     enable = true;
@@ -76,7 +76,7 @@
     allowPing = false; 
   };
 
-  # Optimized Automated System Cleaner Matching Layer 9
+  # optimized automated system cleaner matching layer 9
   programs.nh = {
     enable = true;
     clean = {
@@ -85,7 +85,7 @@
     };
   };
 
-  # Shell Engine Deployment
+  # shell engine deployment
   users.defaultUserShell = pkgs.fish;
   programs.fish.enable = true;
 }
