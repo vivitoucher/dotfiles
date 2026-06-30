@@ -1,0 +1,27 @@
+# universal minimalist imv image viewing layout
+
+[options]
+# visual interface minimalism - drop window clutter
+suppress_default_binds = no
+fullscreen = no
+title_text = imv › ${imv_current_file}
+
+# background layout grid styles
+background = 000000
+solid_background = yes
+
+# high-speed rendering parameters
+scaling_mode = shrink
+upscaling_method = nearest_neighbor
+
+[binds]
+# keyboard layout shortcuts mapping
+q = quit
+x = close
+f = toggle_fullscreen
+
+# horizontal scrolling jumps
+h = prev
+l = next
+left = prev
+right = next
