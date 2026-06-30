@@ -1,66 +1,22 @@
-# universal minimalist dunst notification configuration
-
 [global]
-    # visual layout parameters
-    monitor = 0
-    follow = mouse
     width = 300
-    height = 150
+    height = 200
     origin = top-right
-    offset = 20x20
-    scale = 0
-    notification_limit = 5
-
-    # interface styling
-    progress_bar = true
-    progress_bar_height = 4
-    progress_bar_frame_width = 1
-    progress_bar_min_width = 150
-    progress_bar_max_width = 300
-    
-    separator_height = 2
-    padding = 12
-    horizontal_padding = 12
-    text_icon_padding = 0
-    frame_width = 2
-    gap_size = 6
-
-    # typography rules
-    font = lxgw wenkai mono 11
-    line_height = 0
-    format = "<b>%s</b>\n%b"
-    alignment = left
-    show_age_threshold = 60
-    ellipsize = middle
-    ignore_newline = no
-    stack_duplicates = true
-    hide_duplicate_count = false
-
-    # system behavior shortcuts
-    show_indicators = yes
-    icon_position = off
-    sticky_history = yes
-    history_length = 20
-    browser = zen-browser -new-tab
-    always_run_script = true
-    title = dunst
-    class = dunst
-    corner_radius = 8
+    offset = 10x10
+    font = monospace 10
+    format = "%s\n%b"
 
 [urgency_low]
     background = "#000000"
     foreground = "#ffffff"
-    frame_color = "#222222"
     timeout = 4
 
 [urgency_normal]
     background = "#000000"
     foreground = "#ffffff"
-    frame_color = "#444444"
     timeout = 6
 
 [urgency_critical]
     background = "#000000"
     foreground = "#ffffff"
-    frame_color = "#ff0000"
     timeout = 0
