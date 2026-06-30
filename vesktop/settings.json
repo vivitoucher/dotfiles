@@ -1,0 +1,13 @@
+{
+    "minimizeToTray": true,
+    "openWithWindows": false,
+    "openMinimised": false,
+    "frameless": true,
+    "disableGpu": false,
+    "hardwareAcceleration": true,
+    "splash": false,
+    "splashTheming": false,
+    "enableHub": false,
+    "arRPC": "off",
+    "vencordBackend": "stable"
+}
