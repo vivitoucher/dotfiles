@@ -1,0 +1,23 @@
+# universal minimalist yazi file engine configuration
+
+[manager]
+ratio          = [ 1, 4, 3 ]
+sort_by        = "name"
+sort_sensitive = false
+sort_reverse   = false
+sort_dir_first = true
+show_hidden    = true
+show_symlink   = true
+
+[preview]
+tab_size        = 4
+max_width       = 600
+max_height      = 900
+cache_dir       = ""
+
+[opener]
+edit = [ { run = 'nvim "$@"', block = true, desc = "edit" } ]
+play = [ { run = 'mpv "$@"', orphan = true, desc = "play" } ]
+
+[log]
+enabled = false
