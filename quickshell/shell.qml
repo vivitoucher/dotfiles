@@ -48,7 +48,8 @@ quickshell {
                 onstdoutreceived: (text) => {
                     let cleanvalue = parseint(text.trim());
                     if (!isnan(cleanvalue)) {
-                        audiomotionvalue = cleanvalue;
+                        # clamp values to keep scaling within clean aesthetic bounds
+                        audiomotionvalue = math.max(0, math.min(cleanvalue, 100));
                     }
                 }
             }
@@ -58,25 +59,51 @@ quickshell {
                 id: literaryclockdisplay
                 text: root.literaryclocktext
                 
-                # aesthetic styling rules
                 font.pointsize: 32
-                font.family: "jetbrains mono"  # falls back to system mono if missing
-                color: "#ffffff"               # clean minimal white text
-                opacity: 0.65                  # drifting ghost-like opacity
+                font.family: "jetbrains mono"
+                color: "#ffffff"
+                opacity: 0.65
 
-                # positioning: offset gently near the bottom left corner
+                # position: bottom left corner
                 anchors.left: parent.left
                 anchors.bottom: parent.bottom
                 anchors.leftmargin: 50
                 anchors.bottommargin: 50
 
-                # smooth fluid transition whenever the text string changes
                 behavior on text {
                     sequentialanimation {
                         numberanimation { target: literaryclockdisplay; property: "opacity"; to: 0; duration: 300 }
                         propertyaction { target: literaryclockdisplay; property: "text" }
                         numberanimation { target: literaryclockdisplay; property: "opacity"; to: 0.65; duration: 400 }
                     }
+                }
+            }
+
+            # 4. Visual UI Layer: The Audio-Reactive Vector Mascot
+            rectangle {
+                id: mascotshape
+                
+                # base resting dimensions + physics injection from audio stream
+                width: 80 + (root.audiomotionvalue * 1.5)
+                height: 80 - (root.audiomotionvalue * 0.5)
+                radius: width / 2
+                
+                # aesthetic colors: a muted, clean pastel accent
+                color: "#a6e3a1" 
+                opacity: 0.80
+
+                # position: anchored gently right above the literary clock
+                anchors.left: parent.left
+                anchors.bottom: literaryclockdisplay.top
+                anchors.leftmargin: 50
+                anchors.bottommargin: 30
+
+                # spring-like animation physics curves for fluid motion
+                behavior on width {
+                    springanimation { spring: 3.5; damping: 0.45; epsilon: 0.25 }
+                }
+                behavior on height {
+                    springanimation { spring: 3.5; damping: 0.45; epsilon: 0.25 }
                 }
             }
         }
