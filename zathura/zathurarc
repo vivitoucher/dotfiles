@@ -1,0 +1,20 @@
+# universal minimalist zathura document engine layout
+
+# 1. user interface minimalism - drop window clutter
+set sandbox strict
+set statusbar-home-tilde true
+set show-recent 0
+set guioptions ""
+
+# 2. window rendering parameters
+set adjust-open "width"
+set zoom-step 10
+
+# 3. high-speed smooth scrolling configuration
+set scroll-step 50
+set scroll-wrap true
+
+# 4. foundational aesthetic hooks for future coloring
+# (basic dark background canvas defaults before future ricing)
+set default-bg "#000000"
+set default-fg "#ffffff"
