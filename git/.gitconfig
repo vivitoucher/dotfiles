@@ -1,0 +1,16 @@
+[user]
+    name = vivitoucher
+    email = kylietoucher@gmail.com
+
+[init]
+    defaultbranch = main
+
+[core]
+    editor = nvim
+    whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol
+
+[color]
+    ui = auto
+
+[pull]
+    rebase = false
