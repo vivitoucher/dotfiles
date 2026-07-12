@@ -51,17 +51,83 @@
     };
   };
 
-  # 4. software packages (the complete tool arsenal for layers 2.5 through 12)
+  # 4. software packages (the complete tool arsenal for layers 2.5 through 13)
   environment.system-packages = with pkgs; [
     # ui, compositor backbones & atmospheres (layer 2.5, 3, 7, 9)
     quickshell rofi-wayland swww hyprlock xdg-desktop-portal-hyprland
-    nwg-look papirus-icon-theme
+    nwg-look papirus-icon-theme mpvpaper matugen
     
     # custom typographic standard (layer 1, 2, 6, 7, 8)
     lxgw-wenkai-mono
     
-    # core scriptoria & screen interceptors (layer 8 & 10)
-    kitty yazi thunar helix neovim cliphist grim slurp
+    # core scriptoria, sandbox & screen interceptors (layer 1, 8, 10 & 13)
+    kitty yazi thunar helix neovim cliphist grim slurp satty
+    bat fzf fastfetch tesseract bubblewrap kmscon wlsunset
+    
+    # media, qol audio control & hardware backlights (layer 3.5, 7, 9, 11)
+    vesktop spicetify-cli ani-cli mov-cli mpv zathura playerctl cava
+    brightnessctl ddcutil pulsemixer mpv-osc-modern
+    
+    # foundations & network privacy direct parameters
+    mullvad-browser nh starship wl-clipboard
+    
+    # intelligence & voice layers (layer 13 local engine tools)
+    ollama whisper-cpp piper
+  ];
+
+  # 5. hardware ecosystem & background daemons (feeds inputs directly to matrices)
+  networking.networkmanager.enable = true;
+  hardware.bluetooth.enable = true;
+  services.upower.enable = true;
+  services.power-profiles-daemon.enable = true;
+  services.udisks2.enable = true; # background automount detector (layer 12 qol)
+  
+  security.rtkit.enable = true;
+  services.pipewire = {
+    enable = true;
+    alsa.enable = true;
+    pulse.enable = true;
+    wireplumber.enable = true;
+  };
+
+  # 6. privacy, AI backends, and firewall (max performance/isolation specs)
+  programs.librewolf.enable = true;
+  
+  # Enable local AI inference backend as a dormant system service
+  services.ollama = {
+    enable = true;
+    # acceleration = "cuda"; # Uncomment this line down the road if you use an Nvidia GPU
+  };
+
+  services.adguardhome = {
+    enable = true;
+    open-firewall = true;
+  };
+  networking.firewall = {
+    enable = true;
+    allow-ping = false; 
+  };
+
+  # automated cleaning pipeline (layer 12 hygiene automation core)
+  programs.nh = {
+    enable = true;
+    clean = {
+      enable = true;
+      extra-args = "--keep-since 4d";
+    };
+  };
+
+  # shell configuration layer (layer 8 prompt substrate execution)
+  users.default-user-shell = pkgs.fish;
+  programs.fish.enable = true;
+
+  # Ensure environment flags align for Qt6/Quickshell Scenegraph operations
+  environment.variables = {
+    QT_QPA_PLATFORM = "wayland";
+    QT_AUTOMATIC_SCREEN_SCALE_FACTOR = "1";
+    FLAKE = "/home/vivi/.config/nixos"; # Hardlocks your config path for nh builds
+  };
+}
     bat fzf fastfetch tesseract
     
     # media, qol audio control & hardware backlights (layer 3.5, 7, 9, 11)
